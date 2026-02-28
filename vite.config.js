@@ -10,5 +10,5 @@ export default defineConfig({
 			'@': path.resolve(__dirname, 'src')
 		}
 	},
-	base: '/airplane-model-store2-stylization2-v2/' //! <-- ім'я репозиторію
+	base: '/airplane-model-store2-stylization3/' //! <-- ім'я репозиторію
 })
