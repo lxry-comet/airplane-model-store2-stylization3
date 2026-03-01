@@ -9,5 +9,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/components/PlanesList/PlanesList.styled.jsx"  ]
 }
