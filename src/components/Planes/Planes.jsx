@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import defaultImage from "../default.jpg"; 
-import css from "./Planes.module.css";
+// import css from "./Planes.module.css";
+
+import {ItemTitle, MainImage, TextField, Span, ImageTitles, ImageContainer, ActualImage, Button} from './Planes.styled.jsx'
+
 
 //! Бібліотека react-icons
 import { FaMapMarkerAlt, FaUserAlt, FaCalendarAlt, FaClock } from 'react-icons/fa';
@@ -34,84 +37,83 @@ export default function Planes({
 
   return (
     <>
-      <h3 className={css.itemTitle}>
-        <GiAbstract021 className={css.icon} size={iconSize.lg} />
+      <ItemTitle>
+        <GiAbstract021 size={iconSize.lg} />
         {nameBrief}
-      </h3>
+      </ItemTitle>
       
-      <img src={urlMain} alt={nameBrief} className={css.mainImage} />
+      <MainImage src={urlMain} alt={nameBrief} />
 
-      <p className={css.textField}>
-        <FcTrademark className={css.icon} size={iconSize.sm} /> 
-        Повна назва: <span className={css.textFieldValue}>{nameFull}</span>
-      </p>
+      <TextField>
+        <FcTrademark size={iconSize.sm} /> 
+        Повна назва: <Span>{nameFull}</Span>
+      </TextField>
 
-      <p className={css.textField}>
+      <TextField>
         {/* Логіка: якщо тип містить "літак" — одна іконка, інакше — бумеранг */}
         {type.toLowerCase().includes('літак') ? 
-          <GiCommercialAirplane className={css.icon} size={iconSize.sm} /> : 
-          <GiArmoredBoomerang className={css.icon} size={iconSize.sm} />
+          <GiCommercialAirplane size={iconSize.sm} /> : 
+          <GiArmoredBoomerang size={iconSize.sm} />
         } 
-        Тип: <span className={css.textFieldValue}>{type}</span>
-      </p>
+        Тип: <Span>{type}</Span>
+      </TextField>
 
-      <p className={css.textField}>
-        <GiCeremonialMask className={css.icon} size={iconSize.sm} /> 
-        Прізвисько: <span className={css.textFieldValue}>{nickname}</span>
-      </p>
+      <TextField>
+        <GiCeremonialMask size={iconSize.sm} /> 
+        Прізвисько: <Span>{nickname}</Span>
+      </TextField>
 
-      <p className={css.textField}>
-        <AiOutlineFlag className={css.icon} size={iconSize.sm} /> 
-        Країна виробник: <span className={css.textFieldValue}>{country}</span>
-      </p>
+      <TextField>
+        <AiOutlineFlag size={iconSize.sm} /> 
+        Країна виробник: <Span>{country}</Span>
+      </TextField>
 
-      <p className={css.textField}>
-        <AiOutlineClockCircle className={css.icon} size={iconSize.sm} /> 
-        Рік випуску: <span className={css.textFieldValue}>{year}</span>
-      </p>
+      <TextField>
+        <AiOutlineClockCircle size={iconSize.sm} /> 
+        Рік випуску: <Span>{year}</Span>
+      </TextField>
 
       {different && (
-  <p className={css.textField}>
-    <TbClockHour4Filled className={css.icon} size={iconSize.sm} /> 
-    Тривалість виробництва (в роках): <span className={css.textFieldValue}>{different}</span>
-  </p>
+  <TextField>
+    <TbClockHour4Filled size={iconSize.sm} /> 
+    Тривалість виробництва (в роках): <Span>{different}</Span>
+  </TextField>
 )}
 
-      <p className={css.textField}>
-        <CiBadgeDollar className={css.icon} size={iconSize.md} /> 
-        Ціна: <span className={css.textFieldValue}>{price}</span>
-      </p>
+      <TextField>
+        <CiBadgeDollar size={iconSize.md} /> 
+        Ціна: <Span>{price}</Span>
+      </TextField>
 
-      <p className={css.textField}>
-        <AiOutlineInfoCircle className={css.icon} size={iconSize.sm} /> 
-        Опис: <span className={css.textFieldValue}>{description}</span>
-      </p>
+      <TextField>
+        <AiOutlineInfoCircle size={iconSize.sm} /> 
+        Опис: <Span>{description}</Span>
+      </TextField>
 
-      <h4 className={css.imageTitles}>
-        <GiAirplaneDeparture className={css.icon} size={iconSize.sm} /> 
+      <ImageTitles>
+        <GiAirplaneDeparture size={iconSize.sm} /> 
         Рекламна модель:
-      </h4>
-      <img src={urlPromotional} alt="Promotional model" className={css.promoImage} />
+      </ImageTitles>
+      <img src={urlPromotional} alt="Promotional model"/>
 
-      <h4 className={css.imageTitles}>
-        <CiAirportSign1 className={css.icon} size={iconSize.sm} /> 
+      <ImageTitles>
+        <CiAirportSign1 size={iconSize.sm} /> 
         Реальна модель:
-      </h4>
+      </ImageTitles>
       
-      <div className={css.imageContainer}>
+      <ImageContainer>
         {urlActual.map((item, index) => (
-          <img
+          <ActualImage
             key={index} 
             src={item}
             alt={`${nameBrief} actual view ${index + 1}`}
-            className={css.actualImage}
           />
         ))}
-      </div>
+      </ImageContainer>
 
-      <button className={css.button} type="button">
+      <Button type="button">
         Додати до кошику
-      </button>
+      </Button>
     </>
   );
 }

@@ -1,18 +1,17 @@
 import PropTypes from 'prop-types'
 import Planes from '@/components/Planes/Planes.jsx' 
 import { getBgColor, } from '@/utils'
-import css from "./PlanesList.module.css"
+// import css from "./PlanesList.module.css"
 
+import { List, Item } from './PlanesList.styled.jsx'
 
 function PlanesList({ items }) {
 	return (
-		<ul
-			className={css.list}
-		>
+		<List>
 			{items.map(item => (
-				<li
+				<Item
 					// className={getBgColor(item.info.year)}
-					className={css[getBgColor(item.info.year)]}
+					// className={css[getBgColor(item.info.year)]}
 					key={item.id}
 				>
 					<Planes
@@ -30,9 +29,9 @@ function PlanesList({ items }) {
 						start={item.manufacturing.start}
 						end={item.manufacturing.end}
 					/>
-				</li>
+				</Item>
 			))}
-		</ul>
+		</List>
 	)
 }
 
