@@ -18,6 +18,7 @@ import { iconSize, iconColor } from '@/constants';
 import { getManufacturingYears } from '@/utils/';
 
 export default function Planes({
+  urlWiki,
   urlMain = defaultImage, 
   urlPromotional,
   urlActual = [],
@@ -34,15 +35,17 @@ export default function Planes({
 }) {
   
   const different = getManufacturingYears(start, end);
-
+  console.log('urlWiki:', urlWiki)
   return (
+ 
     <>
       <ItemTitle>
         <GiAbstract021 size={iconSize.lg} />
         {nameBrief}
       </ItemTitle>
       
-      <MainImage src={urlMain} alt={nameBrief} />
+      <a href={urlWiki} target="_blank" rel="noreferrer noopener
+"><MainImage src={urlMain} alt={nameBrief} /></a>
 
       <TextField>
         <FcTrademark size={iconSize.sm} /> 
@@ -119,6 +122,7 @@ export default function Planes({
 }
 
 Planes.propTypes = {
+  urlWiki: PropTypes.string,
   urlMain: PropTypes.string,
   urlPromotional: PropTypes.string.isRequired,
   urlActual: PropTypes.arrayOf(PropTypes.string).isRequired,

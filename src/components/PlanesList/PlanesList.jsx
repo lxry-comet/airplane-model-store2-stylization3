@@ -15,6 +15,7 @@ function PlanesList({ items }) {
 					key={item.id}
 				>
 					<Planes
+						urlWiki={item.url.wikipedia}
 						urlMain={item.url.main}
 						urlPromotional={item.url.promotional}
 						urlActual={item.url.actual}

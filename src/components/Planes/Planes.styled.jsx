@@ -24,7 +24,14 @@ export const TextField = styled.p`
   gap: 8px;        
   margin-bottom: 10px;
 	font-size: 18px;
-	font-weight: 700;  
+	font-weight: 700; 
+	
+	// стилізація іконки:
+	svg{
+		  flex-shrink: 0;
+  	color: purple;          
+  	display: inline-block;
+	}
 `
 export const Span = styled.span`
 	font-weight: 400;
@@ -73,4 +80,9 @@ export const Button = styled.button`
 	box-shadow:
 		inset 0 0 16px 8px rgba(0, 0, 0, 0.3),
 		0 8px 16px rgba(0, 0, 0, 0.9);
+
+		:hover{
+		color: #008080;
+		background-color: #ffffff;
+		}
 `
