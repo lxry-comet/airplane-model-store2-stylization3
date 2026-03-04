@@ -39,10 +39,20 @@ import clsx from "clsx";
 // };
 
 //todo: CSS-модулі 
-export function getBgColor(year) {
-    let className = "listItem";
-    if (year > 1945) className = "last";
-    if (year > 1999) className = "current";
-    console.log("className:", className); //!
-    return className;
+// export function getBgColor(year) {
+//     let className = "listItem";
+//     if (year > 1945) className = "last";
+//     if (year > 1999) className = "current";
+//     console.log("className:", className); //!
+//     return className;
+// };
+
+// //todo: Emotion
+
+export function getBgColorEmotion({ yearOfManufacture }) {
+    // console.log("@emotion/styled_year:", year); //!
+    let bgColor = '#ffdb92';
+    if (yearOfManufacture > 1945) bgColor = '#d2fdbd';
+    if (yearOfManufacture > 1999) bgColor = '#d6f1ff';
+    return bgColor;
 };

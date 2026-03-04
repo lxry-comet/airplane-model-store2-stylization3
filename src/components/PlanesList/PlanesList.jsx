@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import Planes from '@/components/Planes/Planes.jsx' 
-import { getBgColor, } from '@/utils'
+
+// import { getBgColor, } from '@/utils'
 // import css from "./PlanesList.module.css"
 
 import { List, Item } from './PlanesList.styled.jsx'
@@ -12,7 +13,7 @@ function PlanesList({ items }) {
 				<Item
 					// className={getBgColor(item.info.year)}
 					// className={css[getBgColor(item.info.year)]}
-					key={item.id}
+					key={item.id} yearOfManufacture={item.info.year}
 				>
 					<Planes
 						urlWiki={item.url.wikipedia}
