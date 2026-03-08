@@ -13,7 +13,8 @@ function PlanesList({ items }) {
 				<Item
 					// className={getBgColor(item.info.year)}
 					// className={css[getBgColor(item.info.year)]}
-					key={item.id} yearOfManufacture={item.info.year}
+					// key={item.id} yearOfManufacture={item.info.year}
+					key={item.id}
 				>
 					<Planes
 						urlWiki={item.url.wikipedia}

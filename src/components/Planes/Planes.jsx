@@ -48,37 +48,37 @@ export default function Planes({
 "><MainImage src={urlMain} alt={nameBrief} /></a>
 
       <TextField>
-        <FcTrademark size={iconSize.sm} /> 
+        <FcTrademark size={iconSize.md} /> 
         Повна назва: <Span>{nameFull}</Span>
       </TextField>
 
       <TextField>
         {/* Логіка: якщо тип містить "літак" — одна іконка, інакше — бумеранг */}
         {type.toLowerCase().includes('літак') ? 
-          <GiCommercialAirplane size={iconSize.sm} /> : 
-          <GiArmoredBoomerang size={iconSize.sm} />
+          <GiCommercialAirplane size={iconSize.md} /> : 
+          <GiArmoredBoomerang size={iconSize.md} />
         } 
         Тип: <Span>{type}</Span>
       </TextField>
 
       <TextField>
-        <GiCeremonialMask size={iconSize.sm} /> 
+        <GiCeremonialMask size={iconSize.md} /> 
         Прізвисько: <Span>{nickname}</Span>
       </TextField>
 
       <TextField>
-        <AiOutlineFlag size={iconSize.sm} /> 
+        <AiOutlineFlag size={iconSize.md} /> 
         Країна виробник: <Span>{country}</Span>
       </TextField>
 
       <TextField>
-        <AiOutlineClockCircle size={iconSize.sm} /> 
+        <AiOutlineClockCircle size={iconSize.md} /> 
         Рік випуску: <Span>{year}</Span>
       </TextField>
 
       {different && (
   <TextField>
-    <TbClockHour4Filled size={iconSize.sm} /> 
+    <TbClockHour4Filled size={iconSize.md} /> 
     Тривалість виробництва (в роках): <Span>{different}</Span>
   </TextField>
 )}
@@ -89,18 +89,18 @@ export default function Planes({
       </TextField>
 
       <TextField>
-        <AiOutlineInfoCircle size={iconSize.sm} /> 
+        <AiOutlineInfoCircle size={iconSize.md} /> 
         Опис: <Span>{description}</Span>
       </TextField>
 
       <ImageTitles>
-        <GiAirplaneDeparture size={iconSize.sm} /> 
+        <GiAirplaneDeparture size={iconSize.md} /> 
         Рекламна модель:
       </ImageTitles>
       <img src={urlPromotional} alt="Promotional model"/>
 
       <ImageTitles>
-        <CiAirportSign1 size={iconSize.sm} /> 
+        <CiAirportSign1 size={iconSize.md} /> 
         Реальна модель:
       </ImageTitles>
       

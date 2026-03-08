@@ -7,7 +7,10 @@ export const ItemTitle = styled.h3`
 	align-items: center;
   gap: 10px;
 
-	margin-bottom: 12px;
+	// margin-bottom: 12px;
+	/*//! Налаштування відступів - spacing */
+  margin-bottom: ${props => props.theme.spacing(3)};
+
 	padding: 12px 16px;
 	font-size: 32px;
 	text-align: center;
@@ -20,7 +23,7 @@ export const MainImage = styled.img`
 `
 export const TextField = styled.p`
   display: flex;
-  align-items: center;
+  // align-items: center;
   gap: 8px;        
   margin-bottom: 10px;
 	font-size: 18px;
@@ -28,9 +31,10 @@ export const TextField = styled.p`
 	
 	// стилізація іконки:
 	svg{
-		  flex-shrink: 0;
   	color: purple;          
-  	display: inline-block;
+		// min-width: 28px;
+		min-width: ${props => props.theme.iconSize.md}px;
+
 	}
 `
 export const Span = styled.span`

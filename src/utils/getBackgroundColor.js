@@ -47,12 +47,19 @@ import clsx from "clsx";
 //     return className;
 // };
 
-// //todo: Emotion
-
-export function getBgColorEmotion({ yearOfManufacture }) {
+// //todo: Emotion-1
+// export function getBgColorEmotion({ yearOfManufacture }) {
+//     // console.log("@emotion/styled_year:", year); //!
+//     let bgColor = '#ffdb92';
+//     if (yearOfManufacture > 1945) bgColor = '#d2fdbd';
+//     if (yearOfManufacture > 1999) bgColor = '#d6f1ff';
+//     return bgColor;
+// };
+// //todo: Emotion-2
+export function getBgColorEmotion(props) {
     // console.log("@emotion/styled_year:", year); //!
     let bgColor = '#ffdb92';
-    if (yearOfManufacture > 1945) bgColor = '#d2fdbd';
-    if (yearOfManufacture > 1999) bgColor = '#d6f1ff';
+    if (props.children.props.year > 1945) bgColor = '#d2fdbd';
+    if (props.children.props.year > 1999) bgColor = '#d6f1ff';
     return bgColor;
 };

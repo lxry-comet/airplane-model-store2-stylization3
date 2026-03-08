@@ -31,6 +31,8 @@ export const Item = styled.li`
 
 	/*//! Пропси від: <PlanesItem key={item.id} yearOfManufacture={item.info.year}>*/
     ${(props) => console.log("props:", props)}
+		${(props) => console.log("props.children.props.year:", props.children.props.year)}
+
 		//todo: var.2
     background-color: ${getBgColorEmotion};
 `
